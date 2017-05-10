@@ -1,0 +1,78 @@
+body{
+    background-color: #d3d3d3;
+    background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
+    overflow: hidden;
+    div {
+        display: inline-block;
+        margin: 0px !important;
+        padding: 0px !important;
+    }
+    .logo {
+            z-index: 9999;
+            position: fixed;
+            top: 45vh;
+            left: 15px;
+            position: absolute;
+            cursor: pointer;
+            height: 50px;
+            width: 100px;
+            img {
+                position: relative;
+                max-width: 100%;
+            }
+        }
+    .content {
+        height: 100vh;
+        vertical-align: top;
+        margin-left: -4px;
+        .drop{
+            cursor: pointer;
+        }
+        .menu {
+            background-color: rgba(0, 67, 62, .8);
+            position: fixed;
+            left: 8vw;
+            height: 100%;
+            font-size: 3em;
+            color: #93FFFD;
+            form {
+                color: darkslategray;
+                margin-left: 15px;
+            }
+            a {
+                color: #93FFFD;
+                &:hover {
+                    color: #3DC9C7;
+                    background-color: rgba(0, 67, 62, 0);
+                }
+                &:focus {
+                    background-color: rgba(0, 67, 62, 0);
+                }
+            }
+            .caret {
+                font-size: 3em !important;
+            }
+            .nav {
+                 p {
+                    cursor: pointer;
+                    color: #93FFFD;
+                    &:hover {
+                        color: #3DC9C7;
+                    }
+                }
+                .dropdown-menu {
+                    background-color: rgba(0, 67, 62, .8);
+                    width:100%;
+                    .dropdown-list {
+                        display: inline-block !important;
+                        padding-left: 15px !important;
+                    }
+                }
+            }
+        }
+    }
+    .customNav {
+        padding: 0px;
+        height: 100vh;
+    }
+}

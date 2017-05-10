@@ -1,0 +1,13 @@
+.discoverContent {
+  height: 100vh;
+  overflow-y: scroll !important; }
+  .discoverContent p {
+    width: 20vw;
+    word-wrap: break-word; }
+  .discoverContent .story {
+    display: block; }
+    .discoverContent .story .storyCover {
+      width: 10vw;
+      cursor: pointer; }
+      .discoverContent .story .storyCover img {
+        max-width: 100%; }

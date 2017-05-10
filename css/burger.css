@@ -1,0 +1,48 @@
+.burger {
+  z-index: 9999;
+  position: fixed;
+  top: 15px;
+  left: 40px;
+  margin-top: 25px;
+  margin-left: 45px;
+  width: 45px;
+  height: 26.5px;
+  cursor: pointer; }
+
+.bar, .bar:after, .bar:before {
+  width: 45px;
+  height: 2.5px; }
+
+.bar {
+  position: relative;
+  transform: translateY(12px);
+  background: whitesmoke;
+  transition: all 0ms 200ms; }
+  .bar.animate {
+    background: rgba(255, 255, 255, 0); }
+
+.bar:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 12px;
+  background: whitesmoke;
+  transition: bottom 200ms 200ms cubic-bezier(0.23, 1, 0.32, 1), transform 200ms cubic-bezier(0.23, 1, 0.32, 1); }
+
+.bar:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 12px;
+  background: whitesmoke;
+  transition: top 200ms 200ms cubic-bezier(0.23, 1, 0.32, 1), transform 200ms cubic-bezier(0.23, 1, 0.32, 1); }
+
+.bar.animate:after {
+  top: 0;
+  transform: rotate(45deg);
+  transition: top 200ms cubic-bezier(0.23, 1, 0.32, 1), transform 200ms 200ms cubic-bezier(0.23, 1, 0.32, 1); }
+
+.bar.animate:before {
+  bottom: 0;
+  transform: rotate(-45deg);
+  transition: bottom 200ms cubic-bezier(0.23, 1, 0.32, 1), transform 200ms 200ms cubic-bezier(0.23, 1, 0.32, 1); }

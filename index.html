@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html ng-app="wattpad" lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link href="css/tinyscrollbar.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
+        <link href="css/burger.css" rel="stylesheet">
+        <link href="css/home.css" rel="stylesheet">
+        <link href="css/login.css" rel="stylesheet">
+        <link href="css/discover.css" rel="stylesheet">
+    </head>
+    <body ng-controller="mainController as vm">
+        <div class="burger">
+            <div class="bar"></div>
+        </div>
+        <div class="logo" ui-sref="home">
+            <img src="//a.wattpad.com/img/desktop-web/wattpad_logo_40.png">
+        </div>
+        <div class="customNav col-md-1">
+            <canvas id="navigation"></canvas> 
+        </div>
+        <div class="content col-md-11">
+            <section ui-view></section>
+            <div class="menu hidden col-md-12">
+                <ul class="nav">
+                    <li class="dropdown">
+                    <a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Discover<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                            <li class="dropdownList" ng-controller="discoverController as vm">
+                                <p ng-click="vm.changeCategory('Recommended')" ui-sref="discover">Recommended</p>
+                                <p ng-click="vm.changeCategory('Action')" ui-sref="discover">Action</p>
+                                <p ng-click="vm.changeCategory('Non-Fiction')" ui-sref="discover">Non-Fiction</p>
+                                <p ng-click="vm.changeCategory('Adventure')" ui-sref="discover">Adventure</p>
+                                <p ng-click="vm.changeCategory('Paranormal')" ui-sref="discover">Paranormal</p>
+                                <p ng-click="vm.changeCategory('ChickLit')" ui-sref="discover">ChickLit</p>
+                                <p ng-click="vm.changeCategory('Poetry')" ui-sref="discover">Poetry</p>
+                                <p ng-click="vm.changeCategory('Classics')" ui-sref="discover">Classics</p>
+                                <p ng-click="vm.changeCategory('Fanfiction')" ui-sref="discover">Fanfiction</p>
+                                <p ng-click="vm.changeCategory('Romance')" ui-sref="discover">Romance</p>
+                                <p ng-click="vm.changeCategory('Fantasy')" ui-sref="discover">Fantasy</p>
+                                <p ng-click="vm.changeCategory('Science Fiction')" ui-sref="discover">Science Fiction</p>
+                                <p ng-click="vm.changeCategory('General Fiction')" ui-sref="discover">General Fiction</p>
+                                <p ng-click="vm.changeCategory('Short Story')" ui-sref="discover">Short Story</p>
+                                <p ng-click="vm.changeCategory('Historical Fiction')" ui-sref="discover">Historical Fiction</p>
+                                <p ng-click="vm.changeCategory('Spiritual')" ui-sref="discover">Spiritual</p>
+                                <p ng-click="vm.changeCategory('Horror')" ui-sref="discover">Horror</p>
+                                <p ng-click="vm.changeCategory('Teen Fiction')" ui-sref="discover">Teen Fiction</p>
+                                <p ng-click="vm.changeCategory('Humor')" ui-sref="discover">Humor</p>
+                                <p ng-click="vm.changeCategory('Vampire')" ui-sref="discover">Vampire</p>
+                                <p ng-click="vm.changeCategory('Mystery / Thriller')" ui-sref="discover">Mystery / Thriller</p>
+                                <p ng-click="vm.changeCategory('Werewolf')" ui-sref="discover">Werewolf</p>
+                            </li>
+                        </ul>
+                        <li><a ui-sref="login">Create</a></li>
+                        <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Community<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">One more separated link</a></li>
+                        </ul>
+                        </li>
+                    </li>
+                </ul>
+                <h1></h1>
+                <h1></h1>
+                <h1></h1>
+                <form>
+                    <input type="text" placeholder="search">
+                    <input type="submit">
+                </form>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="./node_modules/angular/angular.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.0/angular-ui-router.js"></script>
+        <script src="./js/typed.js"></script>
+        <script src="./js/jquery.tinyscrollbar.js"></script>
+        <script src="./js/canvas.js"></script>
+        <script src="./js/main.js"></script>
+        <script src="./js/controllers/mainController.js"></script>
+        <script src="./js/controllers/homeController.js"></script>
+        <script src="./js/controllers/discoverController.js"></script>
+        <script src="./js/services/API.js"></script>
+    </body>
+</html>

@@ -1,0 +1,90 @@
+.chosenStories {
+    background-color: darkslategray;
+    background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
+    height: 67vh;
+    color: #93FFFD;
+    padding-left: 25px !important;
+    h3 {
+        text-align: center;
+        margin-left: 8vw;
+        margin-bottom: 25px;
+    }
+    .storyDescription {
+        display: inline-block;
+        height: 67vh;
+        top: -20px;
+        text-align: center;
+        .description{
+            margin-left: 1vw !important;
+            overflow: scroll;
+            height: 53vh;
+            .storyCover{
+                width: 10vw;
+                cursor: pointer;
+                img {
+                    max-width: 100%;
+                }
+            }
+            p {
+                width: 20vw;
+                word-wrap: break-word !important;
+            }
+        }
+    }
+    .stories{
+        display: inline-block;
+        overflow-x: scroll !important;
+        white-space: nowrap;
+        padding-top: 10vh !important;
+        .scroll {
+            display: block;
+            position: fixed;
+            left: 55vw;
+        }
+        .story {
+            text-align: center;
+            display: inline-block;
+            margin-right: 35px !important;
+            .storyCover{
+                width: 10vw;
+                cursor: pointer;
+                img {
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+}
+.categories {
+    height: 33vh;
+    overflow-x: scroll !important;
+    white-space: nowrap;
+    padding-right: 15px !important;
+    div {
+        display: block;
+        position: fixed;
+        left: 55vw;
+    }
+    p {
+        margin-top: 13vh;
+        margin-left: 15px;
+        font-size: 3em;
+        display: inline-block;
+        color: darkslategray;
+        span {
+            color: darkslategray;
+            cursor: pointer;
+            &:hover {
+                text-decoration: none;
+                color: grey;
+            }
+        }
+    }
+}
+
+.scrollbar {
+    width: 1450px !important;
+}
+.track {
+    width: 1450px !important;
+}

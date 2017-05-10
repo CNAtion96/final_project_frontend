@@ -1,0 +1,56 @@
+<div class="col-md-12 chosenStories">
+    <h3>{{vm.currentCategory}}</h3>
+    <div class="storyDescription col-md-3" ng-repeat="story in vm.storyDescription">
+        <h4>{{story.title}}</h4>
+        <hr>
+        <div class="description col-md-12">
+            <div class="storyCover">
+                <img src="{{story.cover}}">
+            </div>
+            <p>{{story.description}}</p>
+
+        </div>
+    </div>
+    <div class="stories col-md-9">
+        <div class="story" ng-repeat="story in vm.stories_home" ng-click="vm.showStory(story)">
+            <div class="storyCover">
+                <img src="{{story.cover}}">
+            </div>
+            <h4>{{story.title}}</h4>
+            <h4>By: {{story.user}}</h4>
+        </div>
+        <div class="scroll">
+            <h1>< I scroll ></h1>
+        </div>
+    </div>
+    
+</div>
+
+<div class="col-md-12 categories ">
+    <p><span ng-click="vm.changeCategory('Recommended')">Recommended </span>|</p>
+    <p><span ng-click="vm.changeCategory('Action')">Action </span>|</p>
+    <p><span ng-click="vm.changeCategory('Non-Fiction')">Non-Fiction </span>|</p>
+    <p><span ng-click="vm.changeCategory('Adventure')">Adventure </span>|</p>
+    <p><span ng-click="vm.changeCategory('Paranormal')">Paranormal </span>|</p>
+    <p><span ng-click="vm.changeCategory('ChickLit')">ChickLit </span>|</p>
+    <p><span ng-click="vm.changeCategory('Poetry')">Poetry </span>|</p>
+    <p><span ng-click="vm.changeCategory('Classics')">Classics </span>|</p>
+    <p><span ng-click="vm.changeCategory('Fanfiction')">Fanfiction </span>|</p>
+    <p><span ng-click="vm.changeCategory('Romance')">Romance </span>|</p>
+    <p><span ng-click="vm.changeCategory('Fantasy')">Fantasy </span>|</p>
+    <p><span ng-click="vm.changeCategory('Science Fiction')">Science Fiction </span>|</p>
+    <p><span ng-click="vm.changeCategory('General Fiction')">General Fiction </span>|</p>
+    <p><span ng-click="vm.changeCategory('Short Story')">Short Story </span>|</p>
+    <p><span ng-click="vm.changeCategory('Historical Fiction')">Historical Fiction </span>|</p>
+    <p><span ng-click="vm.changeCategory('Spiritual')">Spiritual </span>|</p>
+    <p><span ng-click="vm.changeCategory('Horror')">Horror </span>|</p>
+    <p><span ng-click="vm.changeCategory('Teen Fiction')">Teen Fiction </span>|</p>
+    <p><span ng-click="vm.changeCategory('Humor')">Humor </span>|</p>
+    <p><span ng-click="vm.changeCategory('Vampire')">Vampire </span>|</p>
+    <p><span ng-click="vm.changeCategory('Mystery / Thriller')">Mystery / Thriller </span>|</p>
+    <p><span ng-click="vm.changeCategory('Werewolf')">Werewolf</span></p>
+    <div>
+        <h1>< I scroll ></h1>
+    </div>
+</div>
+    

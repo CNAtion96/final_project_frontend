@@ -1,0 +1,29 @@
+.loginContainer {
+  height: 100vh;
+  padding-top: 31vh !important; }
+  .loginContainer .introText {
+    text-align: center; }
+    .loginContainer .introText h2 {
+      margin-bottom: 8vh; }
+  .loginContainer .login {
+    height: 50%;
+    padding-top: 5vh !important;
+    text-align: center; }
+    .loginContainer .login .logBtn {
+      cursor: pointer;
+      background-color: #EA8300;
+      height: 50px;
+      width: 300px;
+      border-radius: 5px;
+      padding-top: 5px !important;
+      font-size: 1.5em;
+      color: #93FFFD;
+      box-shadow: -8px 8px 8px rgba(0, 67, 62, 0.8); }
+      .loginContainer .login .logBtn:hover {
+        background-color: #ff9209;
+        box-shadow: -10px 10px 10px rgba(0, 67, 62, 0.8); }
+      .loginContainer .login .logBtn a {
+        color: #93FFFD; }
+        .loginContainer .login .logBtn a:hover {
+          text-decoration: none;
+          color: #93FFFD; }
