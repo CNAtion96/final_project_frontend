@@ -30,52 +30,44 @@
                     <a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Discover<span class="caret"></span></a>
                     <ul class="dropdown-menu">
                             <li class="dropdownList" ng-controller="discoverController as vm">
-                                <p ng-click="vm.changeCategory('Recommended')" ui-sref="discover">Recommended</p>
-                                <p ng-click="vm.changeCategory('Action')" ui-sref="discover">Action</p>
-                                <p ng-click="vm.changeCategory('Non-Fiction')" ui-sref="discover">Non-Fiction</p>
-                                <p ng-click="vm.changeCategory('Adventure')" ui-sref="discover">Adventure</p>
-                                <p ng-click="vm.changeCategory('Paranormal')" ui-sref="discover">Paranormal</p>
-                                <p ng-click="vm.changeCategory('ChickLit')" ui-sref="discover">ChickLit</p>
-                                <p ng-click="vm.changeCategory('Poetry')" ui-sref="discover">Poetry</p>
-                                <p ng-click="vm.changeCategory('Classics')" ui-sref="discover">Classics</p>
-                                <p ng-click="vm.changeCategory('Fanfiction')" ui-sref="discover">Fanfiction</p>
-                                <p ng-click="vm.changeCategory('Romance')" ui-sref="discover">Romance</p>
-                                <p ng-click="vm.changeCategory('Fantasy')" ui-sref="discover">Fantasy</p>
-                                <p ng-click="vm.changeCategory('Science Fiction')" ui-sref="discover">Science Fiction</p>
-                                <p ng-click="vm.changeCategory('General Fiction')" ui-sref="discover">General Fiction</p>
-                                <p ng-click="vm.changeCategory('Short Story')" ui-sref="discover">Short Story</p>
-                                <p ng-click="vm.changeCategory('Historical Fiction')" ui-sref="discover">Historical Fiction</p>
-                                <p ng-click="vm.changeCategory('Spiritual')" ui-sref="discover">Spiritual</p>
-                                <p ng-click="vm.changeCategory('Horror')" ui-sref="discover">Horror</p>
-                                <p ng-click="vm.changeCategory('Teen Fiction')" ui-sref="discover">Teen Fiction</p>
-                                <p ng-click="vm.changeCategory('Humor')" ui-sref="discover">Humor</p>
-                                <p ng-click="vm.changeCategory('Vampire')" ui-sref="discover">Vampire</p>
-                                <p ng-click="vm.changeCategory('Mystery / Thriller')" ui-sref="discover">Mystery / Thriller</p>
-                                <p ng-click="vm.changeCategory('Werewolf')" ui-sref="discover">Werewolf</p>
+                                <p class="category" ng-click="vm.changeCategory('Recommended')" ui-sref="recommended">Recommended</p>
+                                <p class="category" ng-click="vm.changeCategory('Action')" ui-sref="action">Action</p>
+                                <p class="category" ng-click="vm.changeCategory('Non-Fiction')" ui-sref="nf">Non-Fiction</p>
+                                <p class="category" ng-click="vm.changeCategory('Adventure')" ui-sref="adventure">Adventure</p>
+                                <p class="category" ng-click="vm.changeCategory('Paranormal')" ui-sref="paranormal">Paranormal</p>
+                                <p class="category" ng-click="vm.changeCategory('ChickLit')" ui-sref="chicklit">ChickLit</p>
+                                <p class="category" ng-click="vm.changeCategory('Poetry')" ui-sref="poetry">Poetry</p>
+                                <p class="category" ng-click="vm.changeCategory('Classics')" ui-sref="classics">Classics</p>
+                                <p class="category" ng-click="vm.changeCategory('Fanfiction')" ui-sref="fanfiction">Fanfiction</p>
+                                <p class="category" ng-click="vm.changeCategory('Romance')" ui-sref="romance">Romance</p>
+                                <p class="category" ng-click="vm.changeCategory('Fantasy')" ui-sref="fantasy">Fantasy</p>
+                                <p class="category" ng-click="vm.changeCategory('Science Fiction')" ui-sref="sf">Science Fiction</p>
+                                <p class="category" ng-click="vm.changeCategory('General Fiction')" ui-sref="gf">General Fiction</p>
+                                <p class="category" ng-click="vm.changeCategory('Short Story')" ui-sref="ss">Short Story</p>
+                                <p class="category" ng-click="vm.changeCategory('Historical Fiction')" ui-sref="hf">Historical Fiction</p>
+                                <p class="category" ng-click="vm.changeCategory('Spiritual')" ui-sref="spiritual">Spiritual</p>
+                                <p class="category" ng-click="vm.changeCategory('Horror')" ui-sref="horror">Horror</p>
+                                <p class="category" ng-click="vm.changeCategory('Teen Fiction')" ui-sref="tf">Teen Fiction</p>
+                                <p class="category" ng-click="vm.changeCategory('Humor')" ui-sref="humor">Humor</p>
+                                <p class="category" ng-click="vm.changeCategory('Vampire')" ui-sref="vampite">Vampire</p>
+                                <p class="category" ng-click="vm.changeCategory('Mystery / Thriller')" ui-sref="mystery">Mystery / Thriller</p>
+                                <p class="category" ng-click="vm.changeCategory('Werewolf')" ui-sref="werewolf">Werewolf</p>
                             </li>
                         </ul>
-                        <li><a ui-sref="login">Create</a></li>
                         <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Community<span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{vm.usrName}}<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">One more separated link</a></li>
+                            <li><a ui-sref="profile">View Profile</a></li>
+                            <li><a ui-sref="lists">Reading Lists</a></li>
                         </ul>
                         </li>
                     </li>
                 </ul>
-                <h1></h1>
-                <h1></h1>
-                <h1></h1>
                 <form>
                     <input type="text" placeholder="search">
                     <input type="submit">
                 </form>
+                <button ui-sref="home" ng-click="vm.logout()">Log Out</button>
             </div>
         </div>
 
@@ -90,6 +82,7 @@
         <script src="./js/controllers/mainController.js"></script>
         <script src="./js/controllers/homeController.js"></script>
         <script src="./js/controllers/discoverController.js"></script>
+        <script src="./js/controllers/profileController.js"></script>
         <script src="./js/services/API.js"></script>
     </body>
 </html>

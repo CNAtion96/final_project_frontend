@@ -1,17 +1,40 @@
-.discoverContent{
-    height: 100vh;
-    overflow-y: scroll !important;
-    p {
-        width: 20vw;
+.title {
+    height: 88px;
+    margin-left: 15vw !important;
+    background-color: rgb(62,62,62);
+    margin-bottom: 5vh !important;
+    margin-top: 1vh !important;
+    color: whitesmoke;
+    h1 {
+        text-align: center;
+    }
+}
+
+.discoverContent, .lists{
+    background-color: whitesmoke;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-left: 15vw !important;
+    padding: 15px !important;
+
+    p{
+        width: 55vw;
         word-wrap: break-word;
     }
     .story{
+        margin-bottom: 25px !important;
+        display: block !important;
         .storyCover{
                 width: 10vw;
                 cursor: pointer;
                 img {
                     max-width: 100%;
                 }
+            }
+            .description {
+                width: 25vw;
+                height: 30vh;
+                margin-left: 25px !important;
             }
         display: block;
     }

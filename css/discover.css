@@ -1,13 +1,32 @@
-.discoverContent {
-  height: 100vh;
-  overflow-y: scroll !important; }
-  .discoverContent p {
-    width: 20vw;
+.title {
+  height: 88px;
+  margin-left: 15vw !important;
+  background-color: #3e3e3e;
+  margin-bottom: 5vh !important;
+  margin-top: 1vh !important;
+  color: whitesmoke; }
+  .title h1 {
+    text-align: center; }
+
+.discoverContent, .lists {
+  background-color: whitesmoke;
+  border: 2px solid black;
+  border-radius: 10px;
+  margin-left: 15vw !important;
+  padding: 15px !important; }
+  .discoverContent p, .lists p {
+    width: 55vw;
     word-wrap: break-word; }
-  .discoverContent .story {
+  .discoverContent .story, .lists .story {
+    margin-bottom: 25px !important;
+    display: block !important;
     display: block; }
-    .discoverContent .story .storyCover {
+    .discoverContent .story .storyCover, .lists .story .storyCover {
       width: 10vw;
       cursor: pointer; }
-      .discoverContent .story .storyCover img {
+      .discoverContent .story .storyCover img, .lists .story .storyCover img {
         max-width: 100%; }
+    .discoverContent .story .description, .lists .story .description {
+      width: 25vw;
+      height: 30vh;
+      margin-left: 25px !important; }

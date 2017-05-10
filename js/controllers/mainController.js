@@ -17,18 +17,16 @@
                         $('.menu').addClass('hidden');
                         clicked = false;
                     }
-                })
-            })();
-            vm.dropdown = function(i){
-                vm.discClicked = false;
-                if(i === 'disc' && vm.discClicked === false){
-                    $('.discMenu').removeClass('hidden');
-                    $('.discMenu').addClass('show');
-                } else if(i === 'disc' && vm.discClicked === true){
-                    $('.discMenu').removeClass('show');
-                    $('.discMenu').addClass('hidden');
-                }
+            })
+
+            vm.usrName = localStorage.getItem('usrName');
+
+            vm.logout = function(){
+                localStorage.setItem('token', '');
             }
+                
+            })();
+            
            
         });
         

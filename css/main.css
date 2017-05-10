@@ -21,7 +21,8 @@ body {
   body .content {
     height: 100vh;
     vertical-align: top;
-    margin-left: -4px; }
+    margin-left: -4px;
+    overflow-y: scroll !important; }
     body .content .drop {
       cursor: pointer; }
     body .content .menu {

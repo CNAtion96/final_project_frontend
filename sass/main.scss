@@ -25,6 +25,7 @@ body{
         height: 100vh;
         vertical-align: top;
         margin-left: -4px;
+        overflow-y: scroll !important;
         .drop{
             cursor: pointer;
         }
@@ -74,5 +75,6 @@ body{
     .customNav {
         padding: 0px;
         height: 100vh;
+        
     }
 }

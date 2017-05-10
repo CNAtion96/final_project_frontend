@@ -1,10 +1,15 @@
-<div class="col-md-12 discoverContent">
+<div class="col-md-9 title">
+    <h1>{{vm.currentCategory}} Stories</h1>
+</div>
+<div class="col-md-9 discoverContent">
    <div class="story" ng-repeat="story in vm.stories">
-       <div class="storyCover">
+       <div class="col-md-2 storyCover">
             <img src="{{story.cover}}">
         </div>
-       <h3>{{story.title}}</h3>
-       <h3>By: {{story.user}}</h3>
-       <p>{{story.description}}</p>
+        <div class="description">
+            <h3>{{story.title}}</h3>
+            <h3>By: {{story.user}}</h3>
+            <p>{{story.description}}</p>
+        </div>
    </div>
 </div>

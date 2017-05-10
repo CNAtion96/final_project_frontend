@@ -1,0 +1,11 @@
+.list{
+    margin-bottom: 25px !important;
+    display: block !important;
+    .listCover{
+        width: 3vw;
+        cursor: pointer;
+        img {
+            max-width: 100%;
+        }
+    }
+}

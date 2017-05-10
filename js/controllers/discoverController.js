@@ -57,20 +57,34 @@
                 }
             }
 
+
+            
+            vm.hS = function(){
+                $('.category').on('click', function(){ 
+                    $('.bar').removeClass('animate');
+                    $('.menu').addClass('hidden');
+                })
+            }
+            
+
+
             vm.changeCategory = function(category){
+                vm.hS();
                 vm.currentCategory = category;
                 vm.checkCategory(category);
                 localStorage.setItem('category', vm.currentCategory);
                 localStorage.setItem('category_id', vm.category);
                 vm.getStories();
             }
-
-            vm.story = {id: vm.category, limit: 50}
-            let stories = API.stories(vm.story);
-            stories.then(res => {
-                vm.stories = res.data.stories;
-                console.log(vm.stories);
-            })
+            vm.getStories = function(){
+                vm.story = {id: vm.category, limit: 50}
+                let stories = API.stories(vm.story);
+                stories.then(res => {
+                    vm.stories = res.data.stories;
+                    console.log(vm.stories);
+                })
+            } 
+            vm.getStories();
         })
         
 })();
