@@ -4,10 +4,16 @@
     height: 67vh;
     color: #93FFFD;
     padding-left: 25px !important;
+    .modal {
+        color: darkslategray !important;
+    }
     h3 {
         text-align: center;
         margin-left: 8vw;
         margin-bottom: 25px;
+    }
+    .buttons {
+        display: block !important;
     }
     .storyDescription {
         display: inline-block;
@@ -17,10 +23,12 @@
         .description{
             margin-left: 1vw !important;
             overflow: scroll;
-            height: 53vh;
+            height: 50vh;
             .storyCover{
                 width: 10vw;
                 cursor: pointer;
+
+                margin-bottom: 15px !important;
                 img {
                     max-width: 100%;
                 }
@@ -66,7 +74,7 @@
         left: 55vw;
     }
     p {
-        margin-top: 13vh;
+        margin-top: 5vh;
         margin-left: 15px;
         font-size: 3em;
         display: inline-block;

@@ -34,6 +34,20 @@
                         url: `https://finalbackendserver2.herokuapp.com/getList`
                     })
                 },
+                addToList: (data) => {
+                    return $http({
+                        method:"POST",
+                        data: data,
+                        url: `https://finalbackendserver2.herokuapp.com/addToList`
+                    })
+                },
+                search: (data) => {
+                    return $http({
+                        method:"POST",
+                        data: data,
+                        url: `https://finalbackendserver2.herokuapp.com/search`
+                    })
+                },
             }
 
          });

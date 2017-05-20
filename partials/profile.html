@@ -3,9 +3,13 @@
 </div>
 <div class="col-md-9 lists">
    <div class="list" ng-repeat="list in vm.lists">
-       <div class="listCover">
+       <div class="listCover col-md-2">
             <img src="{{list.coverUrl}}">
         </div>
-        <h3>{{list.name}}</h3>
+        <div class="listInfo col-md-9">
+            <h2>{{list.name}}</h2>
+            <h3>Number of Stories: {{list.numStories}}</h3>
+            <button class="btn" ng-click="vm.whichList(list.id,list.name)" ui-sref="list">View List</button>
+        </div>
    </div>
 </div>

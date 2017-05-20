@@ -7,8 +7,11 @@
             <div class="storyCover">
                 <img src="{{story.cover}}">
             </div>
+            <div class="buttons">
+                <button ng-click="vm.read(story.url)" ui-sref="story">Read</button>
+                <button class="btn" data-toggle="modal" ng-click="vm.addStory(story)" data-target="#myModal">+</button>
+            </div>
             <p>{{story.description}}</p>
-
         </div>
     </div>
     <div class="stories col-md-9">
@@ -18,7 +21,6 @@
             </div>
             <h4>{{story.title}}</h4>
             <h4>By: {{story.user}}</h4>
-        </div>
         <div class="scroll">
             <h1>< I scroll ></h1>
         </div>
@@ -54,3 +56,33 @@
     </div>
 </div>
     
+
+
+
+
+<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="vertical-alignment-helper">
+        <div class="modal-dialog vertical-align-center">
+            <!-- Modal content-->
+            <div class="modal-content" ng-repeat="story in vm.modalStory">
+                <div class="modal-body">
+                    <h3 class="modal-title">{{story.title}}</h4>
+                    <div class="storyCover">
+                        <img src="{{story.cover}}">
+                    </div>
+                    <p>{{story.description}}</p>
+                </div>
+                <div class="modal-footer">
+                    <form>
+                        <select id="listAdd">
+                            <option value="">Select a List</option>
+                            <option ng-repeat="list in vm.lists" value="{{list.id}}" ng-model-options="vm.addList">{{list.name}}</option>
+                        </select>
+                        <button type="submit" ng-click="vm.add(story.id)" class="btn btn-default" data-dismiss="modal">Add</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

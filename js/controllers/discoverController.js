@@ -3,88 +3,92 @@
 
     angular
         .module('wattpad')
-        .controller('discoverController', function(API) {
+        .controller('discoverController', function($state, API) {
             const vm = this;
 
             vm.currentCategory = localStorage.getItem('category');
-            vm.category = localStorage.getItem('category_id');
 
-            vm.checkCategory = function(category){
-                if(category === 'Teen Fiction'){
-                    vm.category = 1;
-                } else if(category === 'Poetry'){
-                    vm.category = 2;
-                } else if(category === 'Fantasy'){
-                    vm.category = 3;
-                } else if(category === 'Romance'){
-                    vm.category = 4;
-                } else if(category === 'Science Fiction'){
-                    vm.category = 5;
-                } else if(category === 'Fanfiction'){
-                    vm.category = 6;
-                } else if(category === 'Humor'){
-                    vm.category = 7;
-                } else if(category === 'Mystery / Thriller'){
-                    vm.category = 8;
-                } else if(category === 'Horror'){
-                    vm.category = 9;
-                } else if(category === 'Classics'){
-                    vm.category = 10;
-                } else if(category === 'Adventure'){
-                    vm.category = 11;
-                } else if(category === 'Paranormal'){
-                    vm.category = 12;
-                } else if(category === 'Spiritual'){
-                    vm.category = 13;
-                } else if(category === 'Action'){
-                    vm.category = 14;
-                } else if(category === 'Non-Fiction'){
-                    vm.category = 16;
-                } else if(category === 'Short Story'){
-                    vm.category = 17;
-                } else if(category === 'Vampire'){
-                    vm.category = 18;
-                } else if(category === 'Recommended'){
-                    vm.category = 19;
-                } else if(category === 'General Fiction'){
-                    vm.category = 21;
-                } else if(category === 'Werewolf'){
-                    vm.category = 22;
-                } else if(category === 'Historical Fiction'){
-                    vm.category = 23;
-                } else if(category === 'ChickLit'){
-                    vm.category = 24;
-                }
-            }
-
-
-            
             vm.hS = function(){
-                $('.category').on('click', function(){ 
-                    $('.bar').removeClass('animate');
-                    $('.menu').addClass('hidden');
-                })
+                $('.bar').removeClass('animate');
+                $('.menu').addClass('hidden');
             }
-            
 
+
+            vm.usrName = localStorage.getItem('usrName');
+            
+            vm.logout = function(){
+                localStorage.setItem('token', '');
+            }
 
             vm.changeCategory = function(category){
                 vm.hS();
                 vm.currentCategory = category;
-                vm.checkCategory(category);
                 localStorage.setItem('category', vm.currentCategory);
-                localStorage.setItem('category_id', vm.category);
                 vm.getStories();
             }
+
+            vm.search = function(){
+                localStorage.setItem('category', vm.searchTxt);
+                console.log(vm.currentCategory);
+                //checking to see if search string contains #
+                //and replacing it with %23 if one is found
+                if(vm.searchTxt.includes('#')){
+                    vm.searchText = vm.searchTxt.replace(/#/g, '%23').toLowerCase();
+                    vm.searchObj = {search: vm.searchTxt};
+                    $state.go('discover',{'category': vm.searchTxt});
+                    let search = API.search(vm.searchObj);
+                    search.then(res=> {
+                        console.log(res.data);
+                    })
+                } else {
+                    vm.searchObj = {search: vm.searchTxt};
+                    $state.go('discover',{'category': vm.searchTxt});
+                    console.log(vm.searchObj);
+                    let search = API.search(vm.searchObj);
+                    search.then(res=> {
+                        let searchContent = [res.data];
+                        console.log('content', searchContent);
+                        searchContent.forEach(function(i){
+                            vm.stories = i.stories;
+                            console.log('search', vm.stories);
+                        })
+                    })
+                }
+                vm.searchTxt ='';
+                console.log('search', vm.stories);
+            }
             vm.getStories = function(){
-                vm.story = {id: vm.category, limit: 50}
+                vm.story = {category: vm.currentCategory, limit: 50}
                 let stories = API.stories(vm.story);
                 stories.then(res => {
                     vm.stories = res.data.stories;
                     console.log(vm.stories);
                 })
             } 
+            vm.read = function(url){
+                localStorage.setItem('url', url);
+            }
+            vm.addStory = function(story){
+                vm.modalStory = [];
+                vm.modalStory.push(story);
+            }
             vm.getStories();
+
+            vm.user = {user: localStorage.getItem('usrName')};
+            let lists = API.lists(vm.user);
+            lists.then(res => {
+                vm.lists = res.data.lists;
+                console.log(vm.lists);
+            })
+
+            vm.add = function(storyId){
+                vm.addId = {id: $('#listAdd').val(),story:{storyIds: `${storyId}`}, token: localStorage.getItem('token')};
+                console.log(vm.addId);
+                let add = API.addToList(vm.addId);
+                add.then(res => {
+                    console.log(res);
+                })
+            }
         })
         
 })();

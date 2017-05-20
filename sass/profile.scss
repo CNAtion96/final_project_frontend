@@ -1,8 +1,22 @@
+.edit{
+    display: block !important;
+}
+.lists {
+    margin-bottom: 25px !important;
+}
 .list{
     margin-bottom: 25px !important;
     display: block !important;
+    height: 325px;
+    .listInfo {
+        text-align: center !important;
+        button {
+            margin-top: 15px;
+            background-color: darkorange;
+        }
+    }
     .listCover{
-        width: 3vw;
+        width: 15vw;
         cursor: pointer;
         img {
             max-width: 100%;

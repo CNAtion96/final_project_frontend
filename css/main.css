@@ -1,3 +1,7 @@
+@-moz-document url-prefix() {
+  .logo {
+    margin-left: 10px; } }
+
 body {
   background-color: #d3d3d3;
   background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
@@ -6,6 +10,8 @@ body {
     display: inline-block;
     margin: 0px !important;
     padding: 0px !important; }
+  body button {
+    color: black; }
   body .logo {
     z-index: 9999;
     position: fixed;
@@ -22,20 +28,28 @@ body {
     height: 100vh;
     vertical-align: top;
     margin-left: -4px;
-    overflow-y: scroll !important; }
+    overflow-y: scroll; }
+    body .content .logOut {
+      margin-left: 15px;
+      margin-top: 3%; }
     body .content .drop {
       cursor: pointer; }
     body .content .menu {
+      z-index: 999999999;
       background-color: rgba(0, 67, 62, 0.8);
       position: fixed;
       left: 8vw;
       height: 100%;
       font-size: 3em;
       color: #93FFFD; }
+      body .content .menu .discover {
+        margin-top: 0%; }
       body .content .menu form {
         color: darkslategray;
-        margin-left: 15px; }
+        margin-left: 15px;
+        margin-top: 3%; }
       body .content .menu a {
+        margin-top: 3%;
         color: #93FFFD; }
         body .content .menu a:hover {
           color: #3DC9C7;
@@ -51,10 +65,17 @@ body {
           color: #3DC9C7; }
       body .content .menu .nav .dropdown-menu {
         background-color: rgba(0, 67, 62, 0.8);
-        width: 100%; }
+        width: 100%;
+        margin-left: 10px !important; }
         body .content .menu .nav .dropdown-menu .dropdown-list {
           display: inline-block !important;
           padding-left: 15px !important; }
   body .customNav {
     padding: 0px;
     height: 100vh; }
+  body .read {
+    height: 100vh;
+    width: 100vw; }
+    body .read iframe {
+      width: 100%;
+      height: 100%; }

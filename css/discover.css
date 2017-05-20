@@ -20,6 +20,7 @@
   .discoverContent .story, .lists .story {
     margin-bottom: 25px !important;
     display: block !important;
+    height: 350px;
     display: block; }
     .discoverContent .story .storyCover, .lists .story .storyCover {
       width: 10vw;

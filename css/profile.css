@@ -1,8 +1,20 @@
+.edit {
+  display: block !important; }
+
+.lists {
+  margin-bottom: 25px !important; }
+
 .list {
   margin-bottom: 25px !important;
-  display: block !important; }
+  display: block !important;
+  height: 325px; }
+  .list .listInfo {
+    text-align: center !important; }
+    .list .listInfo button {
+      margin-top: 15px;
+      background-color: darkorange; }
   .list .listCover {
-    width: 3vw;
+    width: 15vw;
     cursor: pointer; }
     .list .listCover img {
       max-width: 100%; }

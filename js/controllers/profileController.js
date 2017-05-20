@@ -12,7 +12,18 @@
                 vm.lists = res.data.lists;
                 console.log(vm.lists);
             })
-            
+
+            vm.id = {id: 452469208};
+            let list = API.list(vm.id);
+            list.then(res => {
+                console.log(res);
+            })
+
+            vm.whichList = function(id,name){
+                localStorage.setItem('list_id', id);
+                localStorage.setItem('list_name', name);
+                console.log('done');
+            }
         })
         
 })();

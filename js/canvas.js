@@ -22,6 +22,7 @@ ctx.moveTo(0, 294);
 ctx.lineTo(0, 195.77);
 ctx.lineTo(133.32, 294);
 ctx.fill();
+//bottom rectangle
 ctx.fillStyle= '#0D6C65';
 ctx.fillRect(0,587.33, 133.32, 293.66);
 //Bottom Triangle

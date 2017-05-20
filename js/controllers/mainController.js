@@ -18,13 +18,6 @@
                         clicked = false;
                     }
             })
-
-            vm.usrName = localStorage.getItem('usrName');
-
-            vm.logout = function(){
-                localStorage.setItem('token', '');
-            }
-                
             })();
             
            
